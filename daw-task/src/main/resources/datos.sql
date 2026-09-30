@@ -1,0 +1,16 @@
+INSERT INTO tarea (titulo, descripcion, fecha_creacion, fecha_vencimiento, estado) VALUES
+('Configurar contenedor Redis', 'Levantar servicio de caché con persistencia RDB activada', '2026-09-01', '2026-09-05', 'COMPLETADA'),
+('Definir endpoints de autenticación', 'Implementar emisión de tokens JWT y refresh tokens', '2026-09-03', '2026-09-12', 'COMPLETADA'),
+('Diseñar esquema relacional', 'Crear scripts DDL con restricciones de clave foránea', '2026-09-05', '2026-09-10', 'COMPLETADA'),
+('Refactorizar capa de persistencia', 'Separar interfaces de acceso a datos del modelo de dominio', '2026-09-08', '2026-09-15', 'COMPLETADA'),
+('Integrar métricas con Prometheus', 'Exportar contadores y latencias HTTP del microservicio', '2026-09-10', '2026-09-20', 'COMPLETADA'),
+('Migrar base de datos con Flyway', 'Escribir versión V2__ con tabla de auditoría para transacciones', '2026-09-15', '2026-10-02', 'EN_PROGRESO'),
+('Configurar pipeline de integración', 'Automatizar validación de formato y pruebas unitarias', '2026-09-18', '2026-10-05', 'EN_PROGRESO'),
+('Optimizar índices en MariaDB', 'Analizar planes de ejecución en consultas de reportes pesados', '2026-09-20', '2026-10-08', 'EN_PROGRESO'),
+('Desarrollar vistas en React', 'Montar formulario controlado con validaciones de entrada', '2026-09-22', '2026-10-12', 'EN_PROGRESO'),
+('Añadir tests de integración', 'Probar repositorios JPA utilizando perfiles de testing aislados', '2026-09-25', '2026-10-10', 'EN_PROGRESO'),
+('Documentar API con OpenAPI', 'Añadir anotaciones Swagger con respuestas HTTP estándar', '2026-09-26', '2026-10-14', 'PENDIENTE'),
+('Ajustar política de logs', 'Configurar rotación de ficheros diarios en formato JSON', '2026-09-27', '2026-10-18', 'PENDIENTE'),
+('Implementar limitador de peticiones', 'Añadir filtro por IP para frenar ráfagas de llamadas abusivas', '2026-09-28', '2026-10-22', 'PENDIENTE'),
+('Generar script de respaldo diario', 'Programar volcado lógico mediante mysqldump hacia storage externo', '2026-09-29', '2026-10-25', 'PENDIENTE'),
+('Auditar dependencias vulnerables', 'Revisar reporte de OWASP Dependency-Check antes de release', '2026-09-30', '2026-11-01', 'PENDIENTE');
