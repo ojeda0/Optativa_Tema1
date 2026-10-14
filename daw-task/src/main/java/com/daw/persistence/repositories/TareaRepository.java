@@ -21,10 +21,10 @@ public interface TareaRepository extends JpaRepository<TareaEntity, Long>{
 	
 	//SELECT * FROM tarea WHERE fecha_vencimiento > now();
 	@Query
-	List<TareaEntity>findByFechaVencimientoAfter(LocalDate fecha); // decirle al vladi lo de greater than equal
+	List<TareaEntity>findByFechaVencimientoAfter(LocalDate fecha);
 	
 	//SELECT * FROM tarea WHERE titulo LIKE %parametro%
 	@Query
-	List<TareaEntity>findByTituloContaining(String titulo); //decirle al vladi lo de ignore case
+	List<TareaEntity>findByTituloContainingIgnoreCase(String titulo);
 		
 }

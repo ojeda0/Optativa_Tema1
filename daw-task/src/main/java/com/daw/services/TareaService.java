@@ -156,7 +156,7 @@ public class TareaService {
 	
 	//Obtener tareas por su título
 	public List<TareaEntity> obtenerPorTitulo(String titulo) {
-		return this.tareaRepository.findByTituloContaining(titulo);
+		return this.tareaRepository.findByTituloContainingIgnoreCase(titulo);
 	}
 	
 }
