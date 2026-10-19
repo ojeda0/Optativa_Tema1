@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TareaService {
 	
-	final private TareaRepository tareaRepository;
+	private final TareaRepository tareaRepository;
 	
 	//Listar todas las tareas
 	public List<TareaEntity> findAll(){
