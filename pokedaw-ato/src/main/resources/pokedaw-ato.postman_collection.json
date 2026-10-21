@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "053d15c8-a138-4f37-978d-2b313e1e1635",
+    "name": "pokedaw-ato",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52616734",
+    "_collection_link": "https://go.postman.co/collection/52616734-053d15c8-a138-4f37-978d-2b313e1e1635?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/pokemon",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pokemon",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon/{id}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pokemon/20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon",
+            "20"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"capturado\": \"POKEBALL\",\r\n        \"id\": 1,\r\n        \"numeroPokedex\": 1,\r\n        \"tipo1\": \"PLANTA\",\r\n        \"tipo2\": \"PLANTA\",\r\n        \"titulo\": \"Bulbasaur\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/pokemon",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon/{id}",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n        \"capturado\": \"POKEBALL\",\r\n        \"id\": 21,\r\n        \"numeroPokedex\": 1,\r\n        \"tipo1\": \"PLANTA\",\r\n        \"tipo2\": \"NINGUNO\",\r\n        \"titulo\": \"Bulbasaur\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/pokemon/21",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon",
+            "21"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon/{id}",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pokemon/23",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon",
+            "23"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon/pokedex?numeroPokedex=---",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pokemon/pokedex?numeroPokedex=123",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon",
+            "pokedex"
+          ],
+          "query": [
+            {
+              "key": "numeroPokedex",
+              "value": "123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon/fecha?fechaInicio=---&fechaFin=---",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pokemon/fecha?fechaInicio=2024-01-01&fechaFin=2024-03-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon",
+            "fecha"
+          ],
+          "query": [
+            {
+              "key": "fechaInicio",
+              "value": "2024-01-01"
+            },
+            {
+              "key": "fechaFin",
+              "value": "2024-03-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pokemon/tipo?tipo=---",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pokemon/tipo?tipo=BICHO",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pokemon",
+            "tipo"
+          ],
+          "query": [
+            {
+              "key": "tipo",
+              "value": "BICHO"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
