@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.daw.persistence.entities.PokemonEntity;
-import com.daw.persistence.entities.enums.Tipo;
 import com.daw.services.PokemonService;
 import com.daw.services.exceptions.PokemonException;
 import com.daw.services.exceptions.PokemonNotFoundException;
@@ -121,9 +120,17 @@ public class PokemonController {
 	
 	//Buscar pokémon por tipo
 	@GetMapping("/tipo")
-	public ResponseEntity<List<PokemonEntity>> buscarPorTipo(@RequestParam Tipo tipo) {
+	public ResponseEntity<?> buscarPorTipo(@RequestParam String tipo) {
+		try {
 			
-		return ResponseEntity.ok(this.pokemonService.buscarPorTipo(tipo));
+			return ResponseEntity.ok(this.pokemonService.buscarPorTipo(tipo));
+			
+		}catch(IllegalArgumentException ex) {
+			
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El tipo indicado no existe.");
+			
+		}
+
 			
 	}
 	

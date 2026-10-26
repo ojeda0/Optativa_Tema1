@@ -185,7 +185,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/pokemon/tipo?tipo=BICHO",
+          "raw": "http://localhost:8080/pokemon/tipo?tipo=volador",
           "protocol": "http",
           "host": [
             "localhost"
@@ -198,7 +198,7 @@
           "query": [
             {
               "key": "tipo",
-              "value": "BICHO"
+              "value": "volador"
             }
           ]
         }

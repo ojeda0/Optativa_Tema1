@@ -148,9 +148,11 @@ public class PokemonService {
 	}
 	
 	//Buscar pokemon por tipo
-	public List<PokemonEntity> buscarPorTipo(Tipo tipo) {
+	public List<PokemonEntity> buscarPorTipo(String tipo) {
+		Tipo tipoEnum = Tipo.valueOf(tipo.toUpperCase());
 		
-		return this.pokemonRepository.findByTipo1OrTipo2(tipo, tipo);
+		
+		return this.pokemonRepository.findByTipo1OrTipo2(tipoEnum, tipoEnum);
 		
 	}
 
