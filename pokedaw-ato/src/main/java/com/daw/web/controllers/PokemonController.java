@@ -3,7 +3,6 @@ package com.daw.web.controllers;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -110,9 +109,7 @@ public class PokemonController {
 	
 	//Buscar los pokemon capturados en un rango de fechas
 	@GetMapping("/fecha")
-	public ResponseEntity<List<PokemonEntity>> buscarPorRangoFecha(
-			@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaInicio, 
-			@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaFin) {
+	public ResponseEntity<List<PokemonEntity>> buscarPorRangoFecha(@RequestParam LocalDate fechaInicio, @RequestParam LocalDate fechaFin) {
 			
 		return ResponseEntity.ok(this.pokemonService.buscarPorRangoFecha(fechaInicio, fechaFin));
 			

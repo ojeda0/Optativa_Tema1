@@ -122,15 +122,13 @@ function setupEventListeners() {
  */
 async function handleGuardar() {
 	const id = document.getElementById('id-pokemon').value;
-	const numeroPokedex = parseInt(document.getElementById('numero-pokedex').value);
+	
+	
+	const numeroPokedex = document.getElementById('numero-pokedex').value;
 	const titulo = document.getElementById('nombre-pokemon').value.trim();
 	const tipo1 = document.getElementById('tipo1-pokemon').value;
 	let tipo2 = document.getElementById('tipo2-pokemon').value;
 	const capturado = document.getElementById('pokeball-pokemon').value;
-
-	if (tipo1 === tipo2) {
-	    tipo2 = 'NINGUNO';
-	}
 
     try {
         if (id) {
@@ -139,11 +137,13 @@ async function handleGuardar() {
             // ⚠️ No incluir campos que el service no permita modificar
             const payloadUpdate = {
 				id: parseInt(id),
+				
 				numeroPokedex: numeroPokedex,
 				titulo: titulo,
 				tipo1: tipo1,
 				tipo2: tipo2,
-				capturado: capturado
+				capturado: capturado,
+				fechaCaptura: null
             };
             await ApiService.update(id, payloadUpdate);
             UIService.showToast(`Pokémon #${id} actualizado correctamente.`, 'success');
@@ -155,7 +155,8 @@ async function handleGuardar() {
 				titulo: titulo,
 				tipo1: tipo1,
 				tipo2: tipo2,
-				capturado: capturado
+				capturado: capturado,
+				fechaCaptura: null
             };
             const nuevo = await ApiService.create(payloadCreate);
             UIService.showToast(`Pokémon #${nuevo.id} capturado con éxito.`, 'success');

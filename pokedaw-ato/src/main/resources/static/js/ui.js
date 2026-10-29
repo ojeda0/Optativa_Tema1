@@ -56,11 +56,11 @@ export const UIService = {
 			<tr>
 			    <td><strong>#${pokemon.id}</strong></td>
 			    <td>Nº ${pokemon.numeroPokedex}</td>
-			    <td>${this.escapeHTML(pokemon.titulo)}</td>
-			    <td><span class="stat-pill">${pokemon.tipo1}</span></td>
-			    <td><span class="stat-pill">${pokemon.tipo2 || 'NINGUNO'}</span></td>
+			    <td>${pokemon.titulo}</td>
+			    <td>${pokemon.tipo1}</td>
+			    <td>${pokemon.tipo2}</td>
 			    <td>${pokemon.capturado}</td>
-			    <td>${pokemon.fechaCaptura || '-'}</td>
+			    <td>${pokemon.fechaCaptura}</td>
 			    <td style="text-align: center;">
 			        <button class="btn-action btn-ver"    data-id="${pokemon.id}" title="Ver Detalle">👁️ Ver</button>
 			        <button class="btn-action btn-editar" data-id="${pokemon.id}" title="Editar">✏️ Editar</button>
@@ -86,18 +86,19 @@ export const UIService = {
         if (pokemon) {
             // MODO EDICIÓN: rellenar cada input con los datos del registro
 			this.elements.modalFormTitulo.textContent = `Editar Pokémon #${pokemon.id}`;
-			document.getElementById('id-pokemon').value        = pokemon.id;
-			document.getElementById('numero-pokedex').value    = pokemon.numeroPokedex;
-			document.getElementById('nombre-pokemon').value    = pokemon.titulo || '';
-			document.getElementById('tipo1-pokemon').value     = pokemon.tipo1 || 'NORMAL';
-			document.getElementById('tipo2-pokemon').value     = pokemon.tipo2 || 'NINGUNO';
-			document.getElementById('pokeball-pokemon').value  = pokemon.capturado || 'POKEBALL';
+			document.getElementById('id-pokemon').value = pokemon.id;
+			
+			document.getElementById('numero-pokedex').value = pokemon.numeroPokedex;
+			document.getElementById('nombre-pokemon').value = pokemon.titulo || '';
+			document.getElementById('tipo1-pokemon').value = pokemon.tipo1 || '';
+			document.getElementById('tipo2-pokemon').value = pokemon.tipo2 || '';
+			document.getElementById('pokeball-pokemon').value = pokemon.capturado || '';
         } else {
             // MODO CREACIÓN: limpiar el campo oculto de ID
 			this.elements.modalFormTitulo.textContent = 'Capturar Pokémon';
-			document.getElementById('id-pokemon').value       = '';
-			document.getElementById('tipo2-pokemon').value    = 'NINGUNO';
-			document.getElementById('pokeball-pokemon').value = 'POKEBALL';
+			document.getElementById('id-pokemon').value = '';
+			document.getElementById('tipo2-pokemon').value = '';
+			document.getElementById('pokeball-pokemon').value = '';
         }
 
         this.elements.modalForm.classList.remove('hidden');
@@ -127,7 +128,7 @@ export const UIService = {
 		</div>
 		<div class="detail-item">
 		    <div class="detail-label">Nombre</div>
-		    <div class="detail-value">${this.escapeHTML(pokemon.titulo)}</div>
+		    <div class="detail-value">${pokemon.titulo}</div>
 		</div>
 		<div class="detail-item">
 		    <div class="detail-label">Tipos</div>
